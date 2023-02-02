@@ -7,6 +7,7 @@ e executa o programa principal de acordo com as condições estabelecidas.*/
 extern std::string Senhadeacesso;
 extern std::string Senhadigitada;
 
+
 void verificar()
 {
 
@@ -14,11 +15,12 @@ void verificar()
 	std::cout << "Digite a senha: ";
 	std::cin >> Senhadigitada;
 
-	Senhadigitada = Hash(Senhadigitada);
-	Senhadeacesso = Hash(Senhadeacesso);
+	unsigned int HashDigitado = Hash(Senhadigitada);
+	unsigned int HashAcesso = Hash(Senhadeacesso);
 
 
-	if (Senhadeacesso == Senhadigitada)
+
+	if (HashDigitado == HashAcesso)
 	{
 		Calculadora();
 	}
@@ -30,10 +32,10 @@ void verificar()
 			system("CLS");
 			std::cout << "Senha incorreta, digite novamente: ";
 			std::cin >> Senhadigitada;
-			Senhadigitada = Hash(Senhadigitada);
-		} while (Senhadigitada != Senhadeacesso);
+			unsigned int HashDigitado = Hash(Senhadigitada);
+		} while (HashDigitado != HashAcesso);
 	}
-	if (Senhadigitada == Senhadeacesso)
+	if (HashDigitado == HashAcesso)
 	{
 		Calculadora();
 	}

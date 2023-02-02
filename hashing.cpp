@@ -4,7 +4,7 @@
 //O funcionamento da função tem como intuito receber o endereço de cada caractere contido na string e deslocar seus bits
 //através dos operadores, resolvendo a operação e retornando esse valor a string.
 
-unsigned int Hash(std::string& data)
+unsigned int Hash(const std::string data)
 {
 	unsigned int i(0);
 

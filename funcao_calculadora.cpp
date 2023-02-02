@@ -5,7 +5,7 @@ no código principal.*/
 
 float Num1, Num2;
 char Operacao;
-std::string Senhadeacesso = "senha";
+std::string Senhadeacesso = "potato";
 std::string Senhadigitada;
 char Resposta2;
 
