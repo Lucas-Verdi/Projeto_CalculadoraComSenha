@@ -1,0 +1,17 @@
+hashing.cpp:7:37: performance: Function parameter 'data' should be passed by const reference. [passedByValue]
+unsigned int Hash(const std::string data)
+                                    ^
+hashing.cpp:12:5: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+  i = ch + (i << 4) + (i << 10) - i;
+    ^
+verificar_senha.cpp:35:17: style: Local variable 'HashDigitado' shadows outer variable [shadowVariable]
+   unsigned int HashDigitado = Hash(Senhadigitada);
+                ^
+verificar_senha.cpp:18:15: note: Shadowed declaration
+ unsigned int HashDigitado = Hash(Senhadigitada);
+              ^
+verificar_senha.cpp:35:17: note: Shadow variable
+   unsigned int HashDigitado = Hash(Senhadigitada);
+                ^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
+
