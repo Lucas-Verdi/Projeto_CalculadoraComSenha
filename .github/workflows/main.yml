@@ -1,0 +1,30 @@
+name: Compilação
+
+on: [push]
+
+jobs:
+  compilar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Set up MinGW
+        uses: egor-tensin/setup-mingw@v2
+        with:
+         platform: x64
+
+      - name: Compilacao
+        run: g++ -o calculadora.exe funcao_calculadora.cpp hashing.cpp main.cpp verificar_senha.cpp funcao_calculadora.h hashing.h verificar_senha.h
+    
+      - name: publish exe    
+        uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: 'master' # your branch name goes here
+      
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+         name: calculadora
+         path: calculadora.exe
